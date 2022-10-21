@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My project</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .phone {
+        position: relative;
+        overflow: hidden;
+        border: 3px solid #eee;
+        border-radius: 15px;
+        height: 600px;
+        width: 340px;
+    }
+
+    .phone.content {
+        opacity: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(100% - 60px);
+        width: 100%;
+        transition: opacity 0.4s ease;
+
+    }
+
+    .phone.content.show {
+        opacity: 1;
+    }
+
+    nav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: -top: -5px;
+        width:100%;
+    }
+
+    nav ul {
+        background-color: #fff;
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 60px;
+    }
+    
+    nav li {
+        color: #777;
+        cursor: pointer;
+        flex: 1;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    nav ul li p {
+        font-size: 12px;
+        margin: 2px 0;
+    }
+
+    nav ul li:hover, nav ul li.active {
+        color: #8e44ad;
+    } 
+
+</style>
+
+<body bgcolor="#8e44ad">
+    <div class="phone">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTedeMktdPaJKBjV6fchznFnrOs70K0nUdgdg&usqp=CAU" alt="Home" class="content show" width="400" height="600">
+        <img src="https://www.ihouse-nyc.org/wp-content/plugins/widgetkit/cache/IMG_2615-7182e230c40a5f7b5c034bcd117ffde9.jpg" alt="Work" class="content" width="400" height="500">
+        <img src="https://www.ihouse-nyc.org/wp-content/plugins/widgetkit/cache/IMG_2615-7182e230c40a5f7b5c034bcd117ffde9.jpg" alt="About" class="content" width="400" height="500">
+        <img src="https://www.ihouse-nyc.org/wp-content/plugins/widgetkit/cache/IMG_2615-7182e230c40a5f7b5c034bcd117ffde9.jpg" alt="Blog" class="content" width="400" height="500">
+        <nav>
+            <ul>
+                <li class="active">
+                    <i class="fas fa-home"></i>
+                    <p>Home</p>
+                </li>
+                <li>
+                    <i class="fas fa-box"></i>
+                    <p>Work</p>
+                </li>
+                <li>
+                    <i class="fas fa-users"></i>
+                    <p>About</p>
+                </li>
+                <li>
+                    <i class="fas fa-open"></i>
+                    <p>Blog</p>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</body>
+<script>
+    const content=document.querySelectorAll('.content')
+    const ListItems = document.querySelectorAll('nav ul li')
+    ListItems.forEach((item, idx)=> {
+        item.addEventListener('click', () => {
+        hideAllContents()
+        hideAllItems()
+        item.classList.add('active')
+        contents[idx].classList.add('show')
+        })
+    })
+    function hideAllContents(){
+        contents.forEach(content=>content.classList.remove('show'))
+    }
+
+    function hideAllItems() {
+        ListItems.forEach(item=> item.classList.remove('activ'))s
+
+    }
+
+    </script>
+
+</html>
